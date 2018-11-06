@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="assets/css/style.css">
+
+    </head>
+	<body>
+        <div class="main_block">
+            <div id="root" class="root"></div>
+            <div id="controlPanel" class="control_panel">
+
+                <div class="control_panel_title">
+                    <h1>Таблица потребителей</h1>
+                </div>
+
+                <div class="control_panel_filter">
+                    <p>Фильтровать по:</p>
+                    <select id="controlPanelFilterSelect">
+                        <option value="0">Все</option>
+                        <option value="1">Физические лица</option>
+                        <option value="2">Юридические лица</option>
+                    </select>
+                </div>
+
+                <button class="control_panel_button" onclick="showFormAddNewCustomer()">Создать потребителя</button>
+
+                <form id="addCustomer" class="control_panel_form display_none" >
+                    <p>Создание нового потребителя</p>
+                    <input id="customer_id" class="customer_id display_none" type="text" name="customer_id" value="" />
+                    <p>Имя потребителя</p>
+                    <input id="customer_name" type="text" name="customer_name" value="" placeholder="Введите имя" />
+                    <p>Номер потребителя</p>
+                    <input id="customer_number" type="text" name="customer_number" value="" placeholder="Введите номер" />
+                    <p>Тип потребителя</p>
+                    <select name="customer_type">
+                        <option value="1">Физическое лицо</option>
+                        <option value="2">Юридическое лицо</option>
+                    </select>
+
+                    <button id="submitAddButton" >Добавить потребителя</button>
+                    <button type="button" class="hidden_forms">Отмена</button>
+                </form>
+
+                <form id="editCustomer" class="control_panel_form display_none" >
+                    <p>Редактирование потребителя</p>
+                    <input id="customer_id" class="customer_id display_none" type="text" name="customer_id" value="" />
+                    <p>Имя потребителя</p>
+                    <input id="customer_name" type="text" name="customer_name" value="" placeholder="Введите имя" />
+                    <p>Номер потребителя</p>
+                    <input id="customer_number" type="text" name="customer_number" value="" placeholder="Введите номер" />
+                    <p>Тип потребителя</p>
+                    <select name="customer_type">
+                        <option value="1">Физическое лицо</option>
+                        <option value="2">Юридическое лицо</option>
+                    </select>
+
+                    <button id="submitEditButton" class="customer_button-apply">Сохранить изменения</button>
+                    <button type="button" class="hidden_forms">Отмена</button>
+                    <button id="delCustomerButton" class="customer_button-del" type="button">Удалить потребителя</button>
+                </form>
+
+            </div>
+        </div>
+
+        <script src="assets/js/babel.min.js"></script>
+        <script src="assets/js/jquery.js"></script>
+        <script type="text/babel" src="assets/js/FakeAPI.js"></script>
+        <script type="text/babel" src="assets/js/main.js"></script>
+
+	</body>
+</html>
